@@ -13,6 +13,8 @@ def test_iframe(driver):
     driver.switch_to.frame(iframe)
 
     element = driver.find_element(By.CSS_SELECTOR, "a.getStarted_Sjon")
+    driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", element)
+    time.sleep(1)
     element.click()
     time.sleep(1)
     title = driver.find_element(By.CSS_SELECTOR, ".theme-doc-markdown.markdown h1")
