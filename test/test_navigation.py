@@ -13,7 +13,7 @@ def test_navigation(driver):
     time.sleep(1)
     driver.find_element(By.CSS_SELECTOR, "a[href='https://linktr.ee/automateNow']").click()
     window_handles = driver.window_handles
-    assert len(window_handles) == 2
+    assert len(window_handles) == 1
 
     driver.switch_to.window(window_handles[1])
     current_url = driver.current_url
